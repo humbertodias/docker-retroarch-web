@@ -3,7 +3,10 @@
 
 build:
 
-	docker build --build-arg RETROARCH_TYPE=nightly --build-arg RETROARCH_VERSION=2020-08-29 . -t hldtux/retroarch-web
+	docker build . \
+	--build-arg RETROARCH_TYPE=stable \
+	--build-arg RETROARCH_VERSION=1.15.0 \
+	-t hldtux/retroarch-web
 
 run:
 

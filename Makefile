@@ -1,8 +1,18 @@
+RETROARCH_TYPE=nightly
+RETROARCH_VERSION=2020-08-29
+
+DOCKER_USERNAME=hldtux
+IMAGE_NAME=retroarch-web
+TAG_NAME=${RETROARCH_TYPE}-${RETROARCH_VERSION}
+
 build:
-	docker build --build-arg RETROARCH_TYPE=nightly --build-arg RETROARCH_VERSION=2020-08-29 . -t hldtux/retroarch-web
+	docker build \
+	--build-arg RETROARCH_TYPE=${RETROARCH_TYPE} \
+	--build-arg RETROARCH_VERSION=${RETROARCH_VERSION} . \
+	-t ${DOCKER_USERNAME}/${IMAGE_NAME}:${TAG_NAME}
 
 run:
-	docker run --rm -it -p 8080:80 hldtux/retroarch-web
+	docker run --rm -it -p 8080:80 ${DOCKER_USERNAME}/${IMAGE_NAME}:${TAG_NAME}
 
-push:
-	docker push hldtux/retroarch-web
+push:	build
+	docker push ${DOCKER_USERNAME}/${IMAGE_NAME}:${TAG_NAME}
