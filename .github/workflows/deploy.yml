@@ -11,7 +11,7 @@ on:
 
 jobs:
   deployment:
-    name: Deploy - type ${{ github.event.inputs.retroarchtype }} v${{ github.event.inputs.retroarchversion }}
+    name: Deploy - ${{ github.event.inputs.retroarchtype }} v${{ github.event.inputs.retroarchversion }}
     runs-on: ubuntu-latest
     environment: DockerHub
     steps:
