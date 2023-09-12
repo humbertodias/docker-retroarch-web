@@ -13,7 +13,7 @@ jobs:
   deployment:
     name: Deploy - type ${{ github.event.inputs.retroarchtype }} v${{ github.event.inputs.retroarchversion }}
     runs-on: ubuntu-latest
-    environment: docker
+    environment: DockerHub
     steps:
       - name: Checkout
         uses: actions/checkout@v3
