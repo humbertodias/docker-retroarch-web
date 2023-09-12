@@ -24,3 +24,6 @@ run-shell:
 
 push:	build	tag
 	docker push ${DOCKER_USERNAME}/${IMAGE_NAME}:${TAG_NAME}
+
+format:
+	shfmt -w fn.sh
