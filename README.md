@@ -16,3 +16,12 @@ docker run --rm -p 8080:80 hldtux/retroarch-web:$RETROARCH_TYPE.$RETROARCH_VERSI
 Then access
 
 http://localhost:8080
+
+and
+
+![](play.png)
+
+1. Select the core
+2. Hit Play
+3. Add content and upload your rom
+4. Load content > Start Directory
