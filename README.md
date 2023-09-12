@@ -1,6 +1,6 @@
 # docker-retroarch-web
 
-[Retroarch-web](https://hub.docker.com/r/hldtux/retroarch-web) container buildable by type/version.
+[Retroarch-web](https://hub.docker.com/r/hldtux/retroarch-web) container buildable by type/version
 
 
 build:
