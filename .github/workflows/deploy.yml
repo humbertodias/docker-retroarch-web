@@ -8,7 +8,7 @@ on:
             - stable
             - nightly
         default: "stable"
-        description: "stable or nightly"
+        description: "type"
       retroarchversion:
         default: "1.15.0"
         description: "version"
