@@ -8,9 +8,9 @@ IMAGE_NAME=retroarch-web
 TAG_NAME=${RETROARCH_TYPE}.${RETROARCH_VERSION}
 
 build:
-	docker build \
+	docker build . \
 	--build-arg RETROARCH_TYPE=${RETROARCH_TYPE} \
-	--build-arg RETROARCH_VERSION=${RETROARCH_VERSION} . \
+	--build-arg RETROARCH_VERSION=${RETROARCH_VERSION} \
 	-t ${IMAGE_NAME}:${TAG_NAME}
 
 tag:
