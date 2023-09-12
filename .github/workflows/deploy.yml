@@ -3,6 +3,10 @@ on:
  workflow_dispatch:
     inputs:
       retroarchtype:
+        type: choice
+        options:
+            - stable
+            - nightly
         default: "stable"
         description: "stable or nightly"
       retroarchversion:
