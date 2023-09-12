@@ -23,5 +23,6 @@ and
 
 1. Select the core
 2. Hit Play
-3. Add content and upload your rom
+3. Add content and upload your rom game
 4. Load content > Start Directory
+5. Select the rom and finally the core to start
