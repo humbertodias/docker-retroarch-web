@@ -19,26 +19,11 @@ RUN apt update && apt install -y \
 # https://github.com/libretro/RetroArch/tree/master/pkg/emscripten
 # https://buildbot.libretro.com/stable/
 ARG RETROARCH_TYPE=stable
-ARG RETROARCH_VERSION=1.9.0
+ARG RETROARCH_VERSION=1.15.0
 ENV ROOT_WWW_PATH /var/www/html
 
-RUN cd ${ROOT_WWW_PATH} \
-	&& wget https://buildbot.libretro.com/${RETROARCH_TYPE}/emscripten/${RETROARCH_VERSION}_RetroArch.7z -O RetroArch.7z \
-	&& 7z e -y RetroArch.7z \
-	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
-	&& cp canvas.png media/canvas.png \
-	&& chmod +x indexer \
-	&& mkdir -p ${ROOT_WWW_PATH}/assets/frontend \
-	&& mkdir -p ${ROOT_WWW_PATH}/assets/cores \
-	&& cd ${ROOT_WWW_PATH}/assets/frontend \
-	&& wget https://buildbot.libretro.com/assets/frontend/bundle.zip \
-	&& unzip bundle.zip -d bundle \
-	&& cd ${ROOT_WWW_PATH}/assets/frontend/bundle \
-	&& ../../../indexer > .index-xhr \
-	&& cd ${ROOT_WWW_PATH}/assets/cores \
-	&& ../../indexer > .index-xhr \
-	&& rm -rf ${ROOT_WWW_PATH}/RetroArch.7z \
-	&& rm -rf ${ROOT_WWW_PATH}/assets/frontend/bundle.zip
+ADD setup.sh /
+RUN ./setup.sh ${RETROARCH_TYPE} ${RETROARCH_VERSION}
 
 WORKDIR ${ROOT_WWW_PATH}
 
