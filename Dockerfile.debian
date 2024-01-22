@@ -15,7 +15,7 @@ RUN apt update && apt install -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 ARG RETROARCH_TYPE=stable
-ARG RETROARCH_VERSION=1.15.0
+ARG RETROARCH_VERSION=1.16.0
 ENV ROOT_WWW_PATH /var/www/html
 
 ADD fn.sh /
