@@ -10,7 +10,7 @@ New stable/nightly versions on https://buildbot.libretro.com
 
 ```shell
 RETROARCH_TYPE=stable
-RETROARCH_VERSION=1.15.0
+RETROARCH_VERSION=1.16.0
 docker run --rm -p 8080:80 hldtux/retroarch-web:$RETROARCH_TYPE.$RETROARCH_VERSION
 ```
 Then access
