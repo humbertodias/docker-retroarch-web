@@ -15,6 +15,7 @@ build:
 
 tag:
 	docker tag ${IMAGE_NAME}:${TAG_NAME} ${DOCKER_USERNAME}/${IMAGE_NAME}:${TAG_NAME}
+	docker tag ${IMAGE_NAME}:${TAG_NAME} ${DOCKER_USERNAME}/${IMAGE_NAME}:latest
 
 run:
 	docker run --rm -it -p 8080:80 ${IMAGE_NAME}:${TAG_NAME}
@@ -24,6 +25,7 @@ run-shell:
 
 push:	build	tag
 	docker push ${DOCKER_USERNAME}/${IMAGE_NAME}:${TAG_NAME}
+	docker push ${DOCKER_USERNAME}/${IMAGE_NAME}:latest
 
 format:
 	shfmt -w fn.sh
