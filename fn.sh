@@ -19,6 +19,9 @@ install_retroarch_web() {
 		rmdir retroarch &&
 		sed -i '/<script src="analytics.js"><\/script>/d' ./index.html &&
 		chmod +x indexer &&
+        cat ${ROOT_WWW_PATH}/assets/frontend/bundle.zip.* > ${ROOT_WWW_PATH}/assets/frontend/bundle.zip
+        unzip -o ${ROOT_WWW_PATH}/assets/frontend/bundle.zip -d ${ROOT_WWW_PATH}/assets/frontend/bundle
+        rm -f ${ROOT_WWW_PATH}/assets/frontend/bundle.zip
 		cd ${ROOT_WWW_PATH}/assets/frontend/bundle &&
 		../../../indexer >.index-xhr &&
 		cd ${ROOT_WWW_PATH}/assets/cores &&

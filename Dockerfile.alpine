@@ -5,7 +5,7 @@ RUN npm install -g coffee-script
 
 ARG RETROARCH_TYPE=stable
 ARG RETROARCH_VERSION=1.19.1
-ENV ROOT_WWW_PATH /usr/share/nginx/html
+ENV ROOT_WWW_PATH=/usr/share/nginx/html
 
 # bash as default
 SHELL ["/bin/bash", "-c"]

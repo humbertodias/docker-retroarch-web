@@ -16,7 +16,7 @@ RUN apt update && apt install -y \
 
 ARG RETROARCH_TYPE=stable
 ARG RETROARCH_VERSION=1.19.1
-ENV ROOT_WWW_PATH /var/www/html
+ENV ROOT_WWW_PATH=/var/www/html
 
 ADD fn.sh /
 RUN source fn.sh \
