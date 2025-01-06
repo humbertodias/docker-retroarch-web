@@ -10,7 +10,7 @@ on:
         default: "stable"
         description: "type"
       retroarchversion:
-        default: "1.19.1"
+        default: "1.20.0"
         description: "version"
 
 jobs:

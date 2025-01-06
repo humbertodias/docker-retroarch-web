@@ -1,7 +1,7 @@
 RETROARCH_TYPE=nightly
 RETROARCH_VERSION=$(shell date '+%Y-%m-%d')
 RETROARCH_TYPE=stable
-RETROARCH_VERSION=1.19.1
+RETROARCH_VERSION=1.20.0
 
 DOCKER_USERNAME=hldtux
 IMAGE_NAME=retroarch-web
@@ -11,7 +11,8 @@ build:
 	docker build . \
 	--build-arg RETROARCH_TYPE=${RETROARCH_TYPE} \
 	--build-arg RETROARCH_VERSION=${RETROARCH_VERSION} \
-	-t ${IMAGE_NAME}:${TAG_NAME}
+	-t ${IMAGE_NAME}:${TAG_NAME} \
+	--no-cache
 
 tag:
 	docker tag ${IMAGE_NAME}:${TAG_NAME} ${DOCKER_USERNAME}/${IMAGE_NAME}:${TAG_NAME}
